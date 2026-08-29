@@ -141,12 +141,12 @@ export default function AnswerSheetViewer({
                 key={p.page}
                 onClick={() => setPageIndex(i)}
                 className={`relative block w-full overflow-hidden rounded-md border-2 transition ${
-                  i === pageIndex ? "border-redpen" : "border-transparent hover:border-ink/15"
+                  i === pageIndex ? "border-accent" : "border-transparent hover:border-ink/15"
                 }`}
               >
                 <img src={p.dataUrl} alt={`Page ${p.page} thumbnail`} className="w-full" />
                 {highlightedPageSet.has(p.page) && (
-                  <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-redpen" />
+                  <span className="absolute right-0.5 top-0.5 h-2 w-2 rounded-full bg-accent" />
                 )}
                 <span className="absolute bottom-0 left-0 right-0 bg-ink/70 py-0.5 text-center font-mono text-[9px] text-white">
                   {p.page}
@@ -170,7 +170,7 @@ export default function AnswerSheetViewer({
               <div
                 key={b.id}
                 style={bboxStyle(b.bbox)}
-                className="absolute rounded-md border-2 border-dashed border-redpen bg-redpen/10 shadow-[0_0_0_2px_rgba(255,255,255,0.6)]"
+                className="absolute rounded-md border-2 border-dashed border-accent bg-accent/10 shadow-[0_0_0_2px_rgba(255,255,255,0.6)]"
               />
             ))}
           </div>

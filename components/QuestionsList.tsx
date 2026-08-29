@@ -62,7 +62,7 @@ export default function QuestionsList({
                   onClick={() => onSelect(`unmatched:${b.id}`)}
                   className={`cursor-pointer rounded-xl border p-3 text-sm transition ${
                     selectedId === `unmatched:${b.id}`
-                      ? "border-redpen/40 bg-redpen-soft/30"
+                      ? "border-accent/40 bg-accent-soft/30"
                       : "border-ink/10 bg-paper-card hover:border-ink/20"
                   }`}
                 >

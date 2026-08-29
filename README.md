@@ -6,8 +6,8 @@ to its question, highlights the exact region of the answer sheet it came from, a
 (optionally) grades each answer with AI feedback.
 
 ## Live demo / repo
-- Live URL: _add after deploying (see below)_
-- GitHub repo: _add your repo URL_
+- Live URL: https://vedaaisayanasg.vercel.app/
+- GitHub repo: https://github.com/kaizer11th/VedaAI_San_ASG_DM
 
 ## Approach
 
@@ -58,7 +58,6 @@ still no database and no auth: everything else (uploaded pages, extraction resul
 lives only in React state for the current session, satisfying the "no auth / no DB /
 in-memory" constraint.
 
-
 ## Assumptions & limitations
 - Exactly one student's answer sheet is handled per run, as specified.
 - Question numbering matching relies on the student having written *some* recognizable
@@ -73,7 +72,6 @@ in-memory" constraint.
   sheets (>15–20 pages) may be slower or hit free-tier rate limits.
 - No authentication/session persistence — refreshing the page clears the current
   result (by design, per "no DB / in-memory storage is sufficient").
-
 
 ## Tech stack
 Next.js 14 (App Router) · TypeScript · Tailwind CSS · pdfjs-dist (client-side PDF

@@ -38,7 +38,7 @@ export default function QuestionCard({
       onClick={onSelect}
       className={`cursor-pointer rounded-xl border p-3 transition ${
         selected
-          ? "border-redpen/40 bg-redpen-soft/30 ring-1 ring-redpen/20"
+          ? "border-accent/40 bg-accent-soft/30 ring-1 ring-accent/20"
           : "border-transparent bg-paper-card hover:border-ink/10"
       }`}
     >
@@ -63,8 +63,8 @@ export default function QuestionCard({
       </div>
 
       {expanded && q.grade?.feedback && (
-        <div className="mt-3 rounded-lg border border-redpen/15 bg-white p-3 animate-fade-in">
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-wide text-redpen">
+        <div className="mt-3 rounded-lg border border-accent/15 bg-white p-3 animate-fade-in">
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-wide text-accent">
             AI Feedback
           </p>
           <p className="mt-1 text-xs leading-relaxed text-ink-soft">

@@ -1,14 +1,9 @@
-// Thin wrapper around Google Gemini's generateContent REST endpoint.
-// The API key lives only in the server's environment (GEMINI_API_KEY) — it is
-// never sent to or stored by the browser.
-
 export interface GeminiImagePart {
   mimeType: string;
   base64: string;
 }
 
-// gemini-2.0-flash was retired by Google; gemini-3.6-flash is the current stable
-// Flash model (as of mid-2026) with the same free tier + vision/JSON support.
+// using gemini 3.6 flash
 const MODEL = "gemini-3.6-flash";
 
 function endpoint() {
@@ -75,7 +70,6 @@ export function parseJson<T>(raw: string): T {
   try {
     return JSON.parse(cleaned) as T;
   } catch (e) {
-    // Try to salvage the largest {...} or [...] block
     const match = cleaned.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
     if (match) {
       return JSON.parse(match[0]) as T;

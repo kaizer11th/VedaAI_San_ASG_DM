@@ -1,15 +1,12 @@
 "use client";
-
-// A small hand-drawn-style checkmark, evoking a teacher's red pen —
-// the one deliberate signature flourish for this design.
-function PenTick() {
+function AccentTick() {
   return (
     <svg
-      width="22"
-      height="22"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
-      className="-rotate-6 text-redpen"
+      className="-rotate-6 text-accent"
       aria-hidden="true"
     >
       <path
@@ -29,12 +26,12 @@ export default function Header({
   onHome?: () => void;
 }) {
   return (
-    <header className="flex items-center justify-between border-b border-paper-line bg-paper/80 px-4 py-3 backdrop-blur-sm sm:px-6">
+    <header className="flex items-center justify-between border-b border-paper-line bg-paper-card px-4 py-3 sm:px-6">
       <div>
         {onHome && (
           <button
             onClick={onHome}
-            className="flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft transition hover:border-ink/20 hover:text-ink"
+            className="flex items-center gap-1.5 rounded-full border border-ink/10 bg-paper px-3 py-1.5 text-xs font-semibold text-ink-soft transition hover:border-ink/20 hover:text-ink"
           >
             <span aria-hidden="true">←</span> Return to home
           </button>
@@ -43,12 +40,11 @@ export default function Header({
 
       <a
         href="/"
-        className="flex items-center gap-1.5 font-display text-lg font-semibold tracking-tight text-ink sm:text-xl"
+        className="flex items-center gap-1.5 font-body text-lg font-extrabold tracking-tight text-ink sm:text-xl"
       >
         <span>
-          Sayan<span className="text-redpen">_</span>DMO
+          Sayan<span className="text-accent">_</span>DMO
         </span>
-        <PenTick />
       </a>
     </header>
   );

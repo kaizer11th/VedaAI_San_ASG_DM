@@ -6,9 +6,6 @@ import type {
   PageImage
 } from "./types";
 
-// Normalizes labels like "11(b)", "Q11 b", "11 b)", "11.b" -> "11b"
-// so extraction quirks between the question paper and the answer sheet
-// (different formatting/spacing/casing) still match up.
 export function normalizeLabel(raw: string): string {
   return raw
     .toLowerCase()

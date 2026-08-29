@@ -37,7 +37,7 @@ export default function ResultsView({
             onClick={() => setMobileTab(tab)}
             className={`flex-1 py-3 text-sm font-semibold transition ${
               mobileTab === tab
-                ? "border-b-2 border-redpen text-redpen"
+                ? "border-b-2 border-accent text-accent"
                 : "text-ink-faint"
             }`}
           >

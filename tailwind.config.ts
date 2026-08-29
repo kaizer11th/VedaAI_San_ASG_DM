@@ -9,22 +9,27 @@ const config: Config = {
     extend: {
       colors: {
         paper: {
-          DEFAULT: "#F6F6F2",
+          DEFAULT: "#F4F4F6",
           card: "#FFFFFF",
-          line: "#E4E3DC"
+          line: "#E7E7EC"
         },
         ink: {
-          DEFAULT: "#15171C",
-          soft: "#4B4F58",
-          faint: "#8A8D95"
+          DEFAULT: "#16181D",
+          soft: "#5B5E66",
+          faint: "#96989F"
+        },
+        accent: {
+          DEFAULT: "#FF6A3D",
+          soft: "#FFE9DD",
+          dark: "#E5541F"
         },
         redpen: {
-          DEFAULT: "#B5372A",
-          soft: "#F4E1DE"
+          DEFAULT: "#D64545",
+          soft: "#FBE4E2"
         },
         correct: {
-          DEFAULT: "#2E8B63",
-          soft: "#E1F0E7"
+          DEFAULT: "#1FA971",
+          soft: "#E1F7EC"
         },
         warn: {
           DEFAULT: "#B8791E",
@@ -39,9 +44,9 @@ const config: Config = {
         }
       },
       fontFamily: {
-        display: ["'Fraunces'", "serif"],
+        display: ["'Inter'", "sans-serif"],
         body: ["'Inter'", "sans-serif"],
-        mono: ["'IBM Plex Mono'", "monospace"]
+        mono: ["'Inter'", "sans-serif"]
       }
     }
   },

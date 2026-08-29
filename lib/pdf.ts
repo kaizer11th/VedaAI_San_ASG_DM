@@ -9,8 +9,6 @@ let pdfjsLibPromise: Promise<any> | null = null;
 
 async function getPdfjs() {
   if (!pdfjsLibPromise) {
-    // @ts-ignore — pdfjs-dist's deep "build/pdf" subpath has no bundled .d.ts;
-    // the top-level package types don't cover this legacy entry point either.
     pdfjsLibPromise = import("pdfjs-dist/build/pdf").then((pdfjs: any) => {
       pdfjs.GlobalWorkerOptions.workerSrc = WORKER_SRC;
       return pdfjs;
@@ -78,8 +76,6 @@ async function imageFileToPage(file: File, pageNumber: number): Promise<PageImag
   };
 }
 
-// Accepts multiple files (e.g. multiple photos of pages, or a single PDF)
-// and returns an ordered array of page images.
 export async function filesToPageImages(files: File[]): Promise<PageImage[]> {
   const allPages: PageImage[] = [];
   let pageCounter = 1;
@@ -99,4 +95,14 @@ export async function filesToPageImages(files: File[]): Promise<PageImage[]> {
   }
 
   return allPages;
+}
+
+export async function getPageCount(file: File): Promise<number> {
+  if (file.type === "application/pdf") {
+    const pdfjs = await getPdfjs();
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+    return pdf.numPages;
+  }
+  return 1;
 }
